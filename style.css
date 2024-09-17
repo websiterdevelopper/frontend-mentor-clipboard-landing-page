@@ -1,0 +1,342 @@
+/* Font */
+@font-face {
+  font-family: "Bai Jamjuree";
+  src: url("font/Bai_Jamjuree/BaiJamjuree-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Bai Jamjuree";
+  src: url("font/Bai_Jamjuree/BaiJamjuree-SemiBold.ttf");
+  font-weight: 600;
+}
+
+/* Variables */
+:root {
+  --primary-clr: hsl(171, 66%, 44%);
+  --secondary-clr: hsl(233, 100%, 69%);
+  --heading-clr: hsl(210, 10%, 33%);
+  --text-clr: hsl(201, 11%, 66%);
+  --hover-clr-1: hsla(171, 66%, 44%, 0.7);
+  --hover-clr-2: hsla(233, 100%, 69%, 0.7);
+  --main-margin: 12px;
+  --section-padding: 70px 0;
+}
+
+@media (width < 425px) {
+  :root {
+    --section-padding: 50px 0;
+  }
+}
+/* Main */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 18px;
+  font-family: "Bai Jamjuree", Arial, Helvetica, sans-serif;
+}
+
+p {
+  color: var(--text-clr);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--heading-clr);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+section {
+  padding: var(--section-padding);
+}
+
+button {
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 2rem;
+  color: white;
+  font-family: inherit;
+  font-size: 16px;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: auto;
+}
+
+button.main-clr-btn {
+  background-color: var(--primary-clr);
+  box-shadow: inset 3px -3px 0 0 hsl(171, 67%, 26%);
+}
+
+button.main-clr-btn:hover {
+  background-color: var(--hover-clr-1);
+}
+
+button.secondary-clr-btn {
+  background-color: var(--secondary-clr);
+  box-shadow: inset 3px -3px 0 0 hsl(232, 46%, 27%);
+}
+
+button.secondary-clr-btn:hover {
+  background-color: var(--hover-clr-2);
+}
+
+/* Main */
+/* ============================ Header ============================ */
+header {
+  text-align: center;
+  padding: var(--section-padding);
+  background-image: url("images/bg-header-desktop.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+header img {
+  margin: 30px auto;
+}
+
+header h1 {
+  margin-bottom: var(--main-margin);
+}
+
+header p {
+  margin-bottom: 30px;
+  max-width: 500px;
+  margin: 0 auto 30px;
+}
+
+header button {
+  margin-right: var(--main-margin);
+}
+
+@media (width < 425px) {
+  header {
+    background-image: url("images/bg-header-mobile.png");
+  }
+
+  header h1 {
+    font-size: 1.75rem;
+  }
+
+  header p {
+    width: 100%;
+  }
+
+  header button {
+    display: block;
+    margin: 0 auto var(--main-margin);
+  }
+}
+
+/* ============================ Main ============================ */
+
+.section-title {
+  text-align: center;
+  width: 600px;
+  margin: 0 auto 30px;
+}
+
+.section-title h2 {
+  margin-bottom: var(--main-margin);
+}
+
+@media (width < 600px) {
+  .section-title {
+    width: 100%;
+  }
+}
+
+/* ========== Section 1 : Snippets ========== */
+.snippets-main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.snippets-main .img-side {
+  flex: 60%;
+}
+
+.snippets-main .text-side {
+  flex: 40%;
+}
+
+.snippets-main .img-side img {
+  margin-left: -40px;
+  max-width: 90%;
+}
+
+.snippets-main ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.snippets-main ul li {
+  color: var(--text-clr);
+}
+
+.snippets-main ul li span {
+  color: var(--heading-clr);
+  display: block;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+@media (width < 700px) {
+  .snippets-main {
+    flex-direction: column;
+  }
+
+  .snippets-main .img-side img {
+    margin: 0 auto 40px;
+    max-width: 70%;
+  }
+
+  .snippets-main ul {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .snippets-main ul li {
+    min-width: fit-content;
+    max-width: 500px;
+    margin: 0 auto 20px;
+  }
+}
+
+/* ========== Section 2 : Clipboard ========== */
+.clipboard img {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+/* ========== Section 3 : Workflow ========== */
+.workflow-feats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30%, auto));
+  justify-content: center;
+  gap: 30px;
+}
+
+.workflow-feats .feat {
+  text-align: center;
+}
+
+.workflow-feats .feat img {
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.workflow-feats .feat h3 {
+  margin-bottom: var(--main-margin);
+}
+
+@media (width < 425px) {
+  .workflow-feats {
+    display: block;
+  }
+}
+
+/* ========== Section 4 : Sponsors ========== */
+.sponsors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 40px;
+  justify-items: center;
+}
+
+/* ========== Section 5 : Download ========== */
+.download .buttons {
+  text-align: center;
+}
+
+.download .buttons button {
+  box-shadow: none;
+  margin-right: 16px;
+}
+
+@media (width < 375px) {
+  .download .buttons button {
+    margin-bottom: var(--main-margin);
+  }
+}
+
+/* ============================ Footer ============================ */
+footer {
+  background-color: rgb(245, 246, 248);
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer .logo img {
+  max-width: 50px;
+}
+
+footer .links ul {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 500px;
+  min-width: fit-content;
+}
+
+footer .links ul li {
+  display: block;
+  width: 150px;
+  margin-bottom: var(--main-margin);
+}
+
+footer .links ul li a {
+  transition: color 0.3s;
+}
+
+footer .links ul li a:hover {
+  color: var(--primary-clr);
+}
+
+footer .socials {
+  display: flex;
+  gap: 30px;
+  cursor: pointer;
+}
+
+@media (width < 767px) {
+  footer {
+    flex-direction: column;
+  }
+
+  footer .links ul {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  footer .links ul li {
+    margin-bottom: 30px;
+  }
+}
